@@ -1,0 +1,10 @@
+{% extends 'bookmark/base.html' %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    <div class="alert alert-danger">Do you want to delete Bookmark "{{object}}"?</div>
+    <input type="submit" class="btn btn-danger" value="Delete" >
+    <a href="{% url 'bookmark:list' %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}

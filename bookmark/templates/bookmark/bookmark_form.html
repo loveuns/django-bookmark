@@ -1,0 +1,16 @@
+{% extends 'bookmark/base.html' %}
+
+{% block content %}
+<div class="p-3 bg-light">
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {% if object %}
+            <input type="submit" class="btn btn-warning" value="Update">
+        {% else %}
+            <input type="submit" class="btn btn-success" value="Add">
+        {% endif %}
+        <a href="{% url 'bookmark:list' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}
